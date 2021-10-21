@@ -5,7 +5,7 @@ VEGETABLES_PER_PAGE= 5
  def new
    @vegetable= Vegetable.new
     #@vegetables= Vegetable.all
-    @category= Category.all
+   @category= Category.all
   end
   def create
     @vegetable= Vegetable.new(product: params[:product],
