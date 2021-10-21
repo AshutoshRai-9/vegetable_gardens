@@ -1,0 +1,48 @@
+<h2>Show Vegetable</h2>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Sr No.</th>
+      <th scope="col">Product</th>
+      <th scope="col">Category</th>
+      <th scope="col">Price</th>
+      <th scope="col">Catogry_id</th>
+
+      <th scope="col">Action</th>
+      <th scope="col"><%= form_tag vegetables_path, :method => 'get' do %>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "search" %>
+        <% end %>
+      </th>
+
+    </tr>
+
+   
+  </thead>
+  <tbody>
+
+  <%  @vegetable.each do |vegetable| %>
+    <tr>
+      <td><%= vegetable.id %></td>
+      <td><%= vegetable.product%></td>
+      <td><%= vegetable.name%></td>
+      <td><%= vegetable.price%></td>
+      <td><%= vegetable.category_id%></td>
+
+      <td>
+      <a href="#">EDIT</a>
+      <a href="#">EDIT</a>
+      <a href="#">EDIT</a>
+
+      </td>
+
+      
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<div>
+<%= link_to "Next",vegetables_path(page:@page + 1) %>
+<%= link_to "Back",vegetables_path(page:@page - 1) %>
+
+</div>
