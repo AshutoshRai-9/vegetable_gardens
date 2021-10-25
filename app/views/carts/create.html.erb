@@ -1,2 +1,14 @@
 <h2>Add To Cart</h2>
-<p><%= @cart.product%></p>
+<table border="1">
+<tr>
+<th>Selected Vegetables</th>
+</tr>
+<tr>
+<% @cartdata.each do |cart| %>
+
+
+ <td><%= cart.vegetable_name %></td>
+ </tr>
+
+<% end %>
+</table>
