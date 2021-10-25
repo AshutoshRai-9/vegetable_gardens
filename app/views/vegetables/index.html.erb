@@ -33,6 +33,7 @@
       <a href="#">EDIT</a>
       <a href="#">EDIT</a>
       <a href="#">EDIT</a>
+      <%= link_to "Add #{vegetable.product} to cart",carts_path(:vegetable_id => vegetable.id),method: :post %>
 
       </td>
 

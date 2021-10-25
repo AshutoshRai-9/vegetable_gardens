@@ -23,3 +23,23 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+
+# development:
+#   adapter: postgresql
+#   encoding: utf8
+#   database: vegtables
+#   username: root
+#   password: root
+#   host: localhost # not mandatory
+#   pool: 5 # not mandatory
+#   timeout: 5000 # not mandatory
+
+# production:
+#   adapter: postgresql
+#   encoding: utf8
+#   database: vegtables
+#   username: root
+#   password: root
+#   host: localhost # not mandatory
+#   pool: 5 # not mandatory
+#   timeout: 5000 # not mandatory

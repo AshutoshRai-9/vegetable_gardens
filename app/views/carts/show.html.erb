@@ -1,0 +1,16 @@
+<h2>Cart show</h2>
+<ul>
+  <% @cart.line_items.each do |line_item| %>
+    <ul>
+      <li>
+      <%= line_item.vegetable.product %>
+        <%= link_to "Add one", line_item_add_path(:id => line_item), method: :post %>
+        <%= link_to "Reduce one", line_item_reduce_path(:id => line_item), method: :post %>
+      </li>
+      <li>
+        <%= link_to "Remove item", line_item_path(line_item), method: :delete %>
+      </li>
+    </ul>
+    
+</ul>
+<% end %>
