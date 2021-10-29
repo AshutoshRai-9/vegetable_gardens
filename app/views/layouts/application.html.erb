@@ -14,24 +14,34 @@
   </head>
 
   <body>
-  <% if user_signed_in? %>
-  <div class="button">
-  <br><br>
-
-  <button class="button"><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></button>
-  <button class="button"><%= link_to "sign up", new_user_registration_path, :method => :get %></button>
-  </div>
-  <%=current_user.email%>
-  <% else %>
   
-  <button class="button"><%= link_to "sign in", new_user_session_path, :method => :get %></button>
 
 
-  <% end %>
 
-  <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+
+
+       <ul class="nav justify-content-end bg-dark py-4">
+       <% if user_signed_in? %>
+       <span class="text-light mx-3"><%=current_user.email%></span>
+       <li class="nav-item">
+       <%= link_to "sign up", new_user_registration_path, :method => :get, class: 'text-light' %>
+       </li>
+       <li class="nav-item">
+       <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: 'text-light mx-3' %>
+       <% end %>
+       </li>
+     </ul>
+     
+     
+       
+
+
+
+
+
 
     <%= yield %>
   </body>
 </html>
+
+

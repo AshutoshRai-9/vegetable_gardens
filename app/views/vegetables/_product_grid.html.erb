@@ -1,0 +1,40 @@
+<center><h2>Show Vegetable</h2></center>
+<div id="products_grid">
+
+  <table class="table">
+  <thead class="thead-light">
+    <tr>
+      
+      <th scope="col">Sr No.</th>
+      <th scope="col">Product</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Category</th>
+
+
+      <th scope="col">Action</th>
+
+      <th scope="col"><%= form_tag vegetables_path, :method => 'get' do %>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "search" %>
+        <% end %>
+      </th>
+
+    </tr>
+
+   
+  </thead>
+  <tbody>
+  <div id="products_grid">
+    <%= render partial: 'products_list', locals: { products: products } %>
+	</div>
+  </tbody>
+</table>
+<div>
+<%#= link_to "Next",vegetables_path(page:@page + 1) %>
+<%#= link_to "Back",vegetables_path(page:@page - 1) %>
+
+</div>
+</div>
+
+

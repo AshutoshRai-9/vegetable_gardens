@@ -5,6 +5,10 @@ class CartsController < ApplicationController
                    user_id: params[:user_id],
                    vegetable_name: params[:vegetable_name])
    if @cart.save
+    
+      CartMailer.user_confirmation_email(@cart,@user=>current_user.email).deliver_now
+
+   
    @cartdata= Cart.where(user_id: params[:user_id])
    end
    #@cart= Cart.vegetables(params[:vegetable_id])
