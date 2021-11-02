@@ -1,4 +1,5 @@
 <center><h2>Show Vegetable</h2></center>
+<div class="float-right"><%= button_to "MyCart",carts_path(:user_id=>current_user.id)%></div><br>
 <div id="products_grid">
 
   <table class="table">
@@ -31,8 +32,10 @@
   </tbody>
 </table>
 <div>
-<%#= link_to "Next",vegetables_path(page:@page + 1) %>
-<%#= link_to "Back",vegetables_path(page:@page - 1) %>
+<%= link_to "Next",vegetables_path(page:@page + 1) %>
+<%= link_to "Back",vegetables_path(page:@page - 1) %>
+
+</div>
 
 </div>
 </div>

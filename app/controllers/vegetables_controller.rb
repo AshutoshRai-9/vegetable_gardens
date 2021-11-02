@@ -30,9 +30,9 @@ VEGETABLES_PER_PAGE= 5
     @vegetable= Vegetable.where(category_id: params[:sid])
   end
 
+
   def from_category
-    byebug
-   products = Vegetable.where(category_id: params[:cat_id])
+   @vegetables = Vegetable.where(category_id: params[:cat_id])
     respond_to do |format|
       format.js
     end
