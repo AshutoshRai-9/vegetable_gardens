@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_27_124217) do
+ActiveRecord::Schema.define(version: 2021_11_03_103308) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2021_10_27_124217) do
     t.string "vegetable_id"
     t.string "user_id"
     t.string "vegetable_name"
+    t.string "vegetable_price"
     t.index "\"cart_id\"", name: "index_carts_on_cart_id"
     t.index ["vegetable_id"], name: "index_carts_on_vegetable_id"
   end
@@ -53,6 +54,8 @@ ActiveRecord::Schema.define(version: 2021_10_27_124217) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "address"
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

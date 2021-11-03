@@ -5,7 +5,8 @@ class CartsController < ApplicationController
    # @cart= Vegetable.find(params[:vegetable_id])
    @cart= Cart.new(vegetable_id: params[:vegetable_id],
                    user_id: params[:user_id],
-                   vegetable_name: params[:vegetable_name])
+                   vegetable_name: params[:vegetable_name],
+                   vegetable_price: params[:vegetable_price])
    if @cart.save
     
       CartMailer.user_confirmation_email(@cart,@user=>current_user.email).deliver_now
@@ -20,11 +21,10 @@ class CartsController < ApplicationController
   end
 
   def index
-    @page= params.fetch(:page,0).to_i
 
     @cart_data1 = Cart.where(id: params[:cart_id],vegetable_id: params[:id]).first.destroy
     @cartdata = Cart.where(user_id: params[:user_id])
-    
+
 
     # @cart_data.each do |c|
 
@@ -50,7 +50,10 @@ class CartsController < ApplicationController
          end
       
 
-    end
-
+  end
+  def buynow
+    @cartdata= Cart.where(:user_id=>current_user.id)
+    
+  end
   
 end

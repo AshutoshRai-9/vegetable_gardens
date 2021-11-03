@@ -15,20 +15,23 @@
     
 <%  cartdata.each do |cart| %>
   <tr>
-    <td><%= cart.id %></td>
-    <td><%= cart.vegetable_name%></td>
+    <td ><%= cart.id %></td>
+    <td ><%= cart.vegetable_name%></td>
 
-    <td><%= link_to "remove",carts_path(:id=>cart.vegetable_id,:cart_id=>cart.id,:user_id=>cart.user_id),:remote => true %>
+    <td ><%= link_to "remove",carts_path(:id=>cart.vegetable_id,:cart_id=>cart.id,:user_id=>cart.user_id),:remote => true %>
     <%= link_to "Add", add_items_path(:user_id=>cart.user_id,:vegetable_id=>cart.vegetable_id),
     method: :post,:remote => true %>
     </td>
 
     
       </tr>
+          
+
   <% end %>
 
   </tbody>
 </table>
-        
+<a href="/buynow">BuyNow</a>
+      
 
         

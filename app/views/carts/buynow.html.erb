@@ -1,0 +1,8 @@
+<% sum = 0 %>
+<%  @cartdata.each do |cart| %>
+
+  <% sum += cart.vegetable_price.to_i%>
+    <% end %>
+  <h2> you have to pay: rs<%= sum %></h2>
+
+  <h2>Delivery Address:<%= current_user.address%></h2>

@@ -4,26 +4,19 @@
 <div id="cart_grid">
 
   <table class="table">
-  <thead class="thead-light">
-    <tr>
-      
-      <th scope="col">Sr N0</th>
-      <th scope="col">Items</th>
-
-
-      <th scope="col">Action</th>
-
-
-    </tr>
-
-   
-  </thead>
-  <tbody>
-  <div id="cart_grid bg-danger">
-    <%= render partial: 'cart_list', locals: { cartdata: cartdata } %>
-	</div>
-  </tbody>
-</table>
+   <thead class="thead-light">
+     <tr>
+       <th scope="col">Sr N0</th>
+       <th scope="col">Items</th>
+       <th scope="col">Action</th> 
+     </tr>
+   </thead>
+    <tbody>
+      <div id="cart_grid bg-danger">
+       <%= render partial: 'cart_list', locals: { cartdata: cartdata } %>
+	    </div>
+    </tbody>
+  </table>
 </div>
 </div>
 

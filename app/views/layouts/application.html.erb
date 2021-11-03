@@ -23,12 +23,26 @@
 
        <ul class="nav justify-content-end bg-dark py-4">
        <% if user_signed_in? %>
+
+       <li class="nav-item">
+       <div class="float-left"><%= link_to "Add_Vegetables",new_vegetable_path,method: :get,class: 'text-light mx-3'%></div><br>
+        </li>
+
        <span class="text-light mx-3"><%=current_user.email%></span>
+       <li class="nav-item">
+       <%= link_to "MyCart",carts_path(:user_id=>current_user.id),method: :post,class: 'text-light mx-3' %>
+       </li>
+
        <li class="nav-item">
        <%= link_to "sign up", new_user_registration_path, :method => :get, class: 'text-light' %>
        </li>
+
        <li class="nav-item">
        <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: 'text-light mx-3' %>
+        <% else %>
+        <li class="nav-item">
+        <%= link_to "Sign in", new_user_session_path, :method => :get, class: 'text-light mx-3' %>
+        </li>
        <% end %>
        </li>
      </ul>
