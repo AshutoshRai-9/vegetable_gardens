@@ -1,24 +1,41 @@
+<table class="table">
+ <thead>
+   <tr>
+     <th scope="col">Id</th>
+     <th scope="col">Name</th>
+     <th scope="col">Price</th>
+     <th scope="col">Category</th>
+     <th scope="col">Action</th>
 
-<%  products.each do |vegetable| %>
-    <tr>
-      <td><%= vegetable.id %></td>
-      <td><%= vegetable.product%></td>
-      <td><%= vegetable.name%></td>
-      <td><%= vegetable.price%></td>
-      <td><%= vegetable.category.name %></td>
+  
+     </tr>
+ </thead>
+  <tbody>
+    <%  products.each do |vegetable| %>
+      <tr>
+        <td><%= vegetable.id %></td>
+        <td><%= vegetable.product%></td>
+        <td><%= vegetable.price%></td>
+        <td><%= vegetable.category.name %></td>
 
-      <td>
-      <a href="#">EDIT</a>
-      <a href="#">EDIT</a>
-      <a href="#">EDIT</a>
-      <%= link_to "Add #{vegetable.product} to cart",carts_path(:vegetable_id => vegetable.id,
-                                                              :user_id =>current_user.id,
-                                                              :vegetable_name =>vegetable.product,
-                                                              :vegetable_price =>vegetable.price),
-                                                             method: :post %>
+        <td>
+           <%= link_to "Show",vegetable_path(:id => vegetable.id),method: :get %>
+           <%= link_to "Remove",vegetable_path(:id => vegetable.id),method: :delete %>
+           <%= link_to "Add to cart",carts_path(:vegetable_id => vegetable.id,
+                                           :user_id =>current_user.id,
+                                           :vegetable_name =>vegetable.product,
+                                           :vegetable_price =>vegetable.price),
+                                            method: :post %>
 
-      </td>
+         </td>
 
       
-        </tr>
+       </tr>
     <% end %>
+
+   </tbody>
+</table>
+    
+
+
+

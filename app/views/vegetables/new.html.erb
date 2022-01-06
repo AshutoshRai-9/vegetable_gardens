@@ -1,45 +1,31 @@
 
-<div class="container">
-<div class="row">
-<div class="col-sm-6 mx-auto bg-secondary">
-<h1>Add Vegetable</h1>
+
+  <%= form_with model: @vegetable do |form| %>
+    <div>
+      <%= form.label :product %><br>
+      <%= form.text_field :product %>
+    </div>
+
+<div>
+    <%= form.label :category %><br>
+    <%= form.text_field :name %>
+  </div>
+    <div>
+      <%= form.label :price %><br>
+      <%= form.text_field :price %><br>
+    </div>
+  
 
 
-<form method="post" action="/vegetables">
-  <div class="form-group">
-    <label>Product</label>
-    <input type="text" name="product" class="form-control">
+    <div>
+    <%= form.label :category_id %><br>
+    <%= form.text_field :category_id %>
   </div>
 
-  <div class="form-group">
-    <label>Category</label>
-    <input type="text" name="category" class="form-control">
+  <div>
+    <%= form.file_field :image %>
   </div>
-
-  <div class="form-group">
-    <label>Price</label>
-    <input type="text" name="price" class="form-control">
-  </div>
-
-  <div class="form-group">
-    <label>Category_id</label>
-    <select name="c_id">
-    <% @category.each do |c| %>
-      <option> <%= c.id %> </option><%= c.name%>
-      <% end %>
-
-    </select>   
-                                                           
-  </div>
-
-  <input type="submit" class="btn btn-primary btn-md" value="submit">
-
-</form>
-
-
-</div>
-
-</div>
-
-</div>
-
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>

@@ -4,6 +4,8 @@
 <% @categories.each do | cat | %>
   <%= link_to cat.name, fetch_products_path(:cat_id => cat.id), :remote => true %>
 <% end %>
-                                                       
+   
+
+
 </div>
 

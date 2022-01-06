@@ -12,7 +12,7 @@ class CartsController < ApplicationController
       CartMailer.user_confirmation_email(@cart,@user=>current_user.email).deliver_now
        #redirect_to cart_path
       @cartdata= Cart.where(user_id: params[:user_id])
-
+      flash.now[:notice] = "We have exactly  books available."
    end
    #@cart= Cart.vegetables(params[:vegetable_id])
 
@@ -39,7 +39,7 @@ class CartsController < ApplicationController
 
   end
   def Add_more_items
-       @vegetable= Vegetable.find( params[:vegetable_id])
+       @vegetable= Vegetable.find(params[:id])
        @cart=Cart.new(user_id: params[:user_id],:vegetable_name=> @vegetable.product,:vegetable_id=>@vegetable.id)
        @cart.save
          #render "carts/create"

@@ -1,0 +1,51 @@
+
+<div class="container">
+<div class="row">
+<div class="col-sm-6 mx-auto bg-secondary">
+<h1>Add Vegetable</h1>
+
+
+<form method="post" action="/vegetables" :remote => true>
+  <div class="form-group">
+    <label>Product</label>
+    <input type="text" name="product" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label>Category</label>
+    <input type="text" name="category" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label>image</label>
+    <input type="file" name="file" class="form-control">
+  </div>
+
+
+  <div class="form-group">
+  <label>Price</label>
+  <input type="text" name="price" class="form-control">
+</div>
+
+  <div class="form-group">
+    <label>Category_id</label>
+    <select name="c_id">
+    <% @category.each do |c| %>
+      <option> <%= c.id %> </option><%= c.name%>
+      <% end %>
+
+    </select>   
+                                                           
+  </div>
+
+  <input type="submit" class="btn btn-primary btn-md" value="submit">
+
+</form>
+
+
+</div>
+
+</div>
+
+</div>
+

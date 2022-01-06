@@ -1,16 +1,3 @@
-<table border="1">
-<tr>
-<th>Product</th>
-<th>Category</th>
-<th>Price</th>
-</tr>
-
-<% @vegetable.each do |cart| %>
-    <tr>
-<td><%= cart.product %></td>
-<td><%= cart.name %></td>
-<td><%= cart.price %></td>
-
-<% end %>
-</tr>
-</table>
+<%= @vegetables.product %></br>
+<%= image_tag @vegetables.image_url %></br>
+Price:<%= @vegetables.price %>
